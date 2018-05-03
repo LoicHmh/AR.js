@@ -143,14 +143,41 @@
 	mesh.position.y	= geometry.parameters.height/2
 	arWorldRoot.add( mesh );
 	
-	var geometry	= new THREE.TorusKnotGeometry(0.3,0.1,64,16);
-	var material	= new THREE.MeshNormalMaterial(); 
-	var mesh	= new THREE.Mesh( geometry, material );
-	mesh.position.y	= 0.5
-	arWorldRoot.add( mesh );
+	//var geometry	= new THREE.TorusKnotGeometry(0.3,0.1,64,16);
+	//var material	= new THREE.MeshNormalMaterial(); 
+	//var mesh	= new THREE.Mesh( geometry, material );
+	//mesh.position.y	= 0.5
+	//arWorldRoot.add( mesh );
+	
+	var geometry = new THREE.SphereBufferGeometry( 500, 60, 40 );//建立半径为500,水平垂直分割面分别为60,40的缓冲球面  
+	geometry.scale(  -1, 1, 1 );//进行缩放，进行矩阵变换,将视频贴在球内表面  
+
+	var video = document.createElement( 'video' );  
+	video.width = 640;  
+	video.height = 360;  
+	video.loop = true;//视频是否循环  
+	video.muted = true;//是否关闭音频  
+	video.src = THREEx.ArToolkitContext.baseURL + '../data/videos/tv.webm';  
+	video.setAttribute( 'webkit-playsinline', 'webkit-playsinline' );  
+	video.play();  
+
+	var texture = new THREE.VideoTexture( video );//视频纹理  
+	texture.minFilter = THREE.LinearFilter;//纹理在缩小时的过滤方式,默认THREE.LinearMipMapNearestFilter选择最临近的mip层，并执行线性过滤  
+	texture.format = THREE.RGBFormat;//像素数据的颜色格式, 默认为THREE.RGBAFormat,还有以下可选参数  
+	//THREE.AlphaFormat = 1019; //GL_ALPHA  Alpha 值  
+	//THREE.RGBFormat = 1020;       //Red, Green, Blue 三原色值  
+	//THREE.RGBAFormat = 1021;  //Red, Green, Blue 和 Alpha 值  
+	//THREE.LuminanceFormat = 1022; //灰度值  
+	//THREE.LuminanceAlphaFormat = 1023;    //灰度值和 Alpha 值  
+
+	var material = new THREE.MeshBasicMaterial({ map: texture });//基础网孔材料  
+
+	mesh = new THREE.Mesh( geometry, material );  
+
+	arWorldRoot.add( mesh );  
 	
 	onRenderFcts.push(function(){
-		mesh.rotation.x += 0.1
+		//mesh.rotation.x += 0.1
 	})
 
 	//////////////////////////////////////////////////////////////////////////////////
