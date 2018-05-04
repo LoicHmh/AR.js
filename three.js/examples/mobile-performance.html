@@ -122,7 +122,7 @@
 		lerpPosition: 0.4,
 		lerpQuaternion: 0.3,
 		lerpScale: 1,
-	})
+CubeGeometry(1,1,1)	})
 	onRenderFcts.push(function(delta){
 		smoothedControls.update(markerRoot)
 	})
@@ -149,7 +149,7 @@
 	//mesh.position.y	= 0.5
 	//arWorldRoot.add( mesh );
 	
-	var geometry = new THREE.SphereBufferGeometry( 500, 60, 40 );//建立半径为500,水平垂直分割面分别为60,40的缓冲球面  
+	var geometry = new THREE.CubeGeometry(1,1,1)//SphereBufferGeometry( 500, 60, 40 );//建立半径为500,水平垂直分割面分别为60,40的缓冲球面  
 	geometry.scale(  -1, 1, 1 );//进行缩放，进行矩阵变换,将视频贴在球内表面  
 
 	var video = document.createElement( 'video' );  
