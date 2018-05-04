@@ -133,15 +133,15 @@
 	var arWorldRoot = smoothedRoot
 
 	// add a torus knot	
-	var geometry	= new THREE.CubeGeometry(1,1,1);
-	var material	= new THREE.MeshNormalMaterial({
-		transparent : true,
-		opacity: 0.5,
-		side: THREE.DoubleSide
-	}); 
-	var mesh	= new THREE.Mesh( geometry, material );
-	mesh.position.y	= geometry.parameters.height/2
-	arWorldRoot.add( mesh );
+	//var geometry	= new THREE.CubeGeometry(1,1,1);
+	//var material	= new THREE.MeshNormalMaterial({
+	//	transparent : true,
+	//	opacity: 0.5,
+	//	side: THREE.DoubleSide
+	//}); 
+	//var mesh	= new THREE.Mesh( geometry, material );
+	//mesh.position.y	= geometry.parameters.height/2
+	//arWorldRoot.add( mesh );
 	
 	//var geometry	= new THREE.TorusKnotGeometry(0.3,0.1,64,16);
 	//var material	= new THREE.MeshNormalMaterial(); 
@@ -157,7 +157,7 @@
 	video.height = 360;  
 	video.loop = true;//视频是否循环  
 	video.muted = true;//是否关闭音频  
-	video.src ='marker-training/tv.webm';  
+	video.src ='marker-training/ar-tv.mp4';  
 	video.setAttribute( 'webkit-playsinline', 'webkit-playsinline' );  
 	video.play();  
 
