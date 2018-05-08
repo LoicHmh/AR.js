@@ -222,7 +222,7 @@
 
 		type : 'pattern',
 
-		patternUrl : THREEx.ArToolkitContext.baseURL + '../data/data/tv.patt'
+		patternUrl : THREEx.ArToolkitContext.baseURL + '../data/data/child.patt'
 
 		//patternUrl : THREEx.ArToolkitContext.baseURL + '../data/data/patt.hiro'
 
@@ -308,15 +308,15 @@
 
 	var video = document.createElement( 'video' );  
 
-	video.width = 640;  
+	video.width = 784;  
 
-	video.height = 360;  
+	video.height = 1080;  
 
 	video.loop = true;//视频是否循环  
 
-	video.muted = true;//是否关闭音频  
+	video.muted = false;//是否关闭音频  
 
-	video.src ='marker-training/ar-tv.mp4';  
+	video.src ='marker-training/ar-child.mp4';  
 
 	video.setAttribute( 'webkit-playsinline', 'webkit-playsinline' );  
 
