@@ -194,10 +194,10 @@
 	//geometry.scale(  -1, 1, 1 );//进行缩放，进行矩阵变换,将视频贴在球内表面  
 
 	var video = document.createElement( 'video' );  
-	video.width = 640;  
-	video.height = 360;  
+	video.width = 1280;  
+	video.height = 720;  
 	video.loop = true;//视频是否循环  
-	video.muted = true;//是否关闭音频  
+	video.muted = false;//是否关闭音频  
 	video.src ='marker-training/ar-tv.mp4';  
 	video.setAttribute( 'webkit-playsinline', 'webkit-playsinline' );  
 	video.play();  
